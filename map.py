@@ -43,7 +43,7 @@ github_geojson_sources = [
     ("https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDOT_SHA_County_Boundaries/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson", "MDOT SHA County Boundaries"),
     ("https://meadecarb.github.io/GEO/map.geojson", "MD HB550 Overburdened Census Tracts"),
     ("https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/Retail_Service_Territories/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson", "Electric Retail Service Territories"),
-    ("https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Justice40_Tracts_May_2022/FeatureServer/0?f=pjson", "Justice40 Tracts May 2022")
+    ("https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/Justice40_Tracts_May_2022/FeatureServer/0?f=pjson&where=SF%3D%27MARYLAND%27", "Justice40 Tracts May 2022")
 ]
 
 for i, (url, name) in enumerate(github_geojson_sources):
