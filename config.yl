@@ -1,0 +1,7 @@
+theme: jekyll-theme-minimal
+title: MEA Geospatial Map Projet Beta v1
+description: A basic interactive map. 
+plugins:
+- jekyll-remote-theme 
+baseurl: "/basic" # the subpath of your site, e.g. /blog
+url: "https://MEADecarb.github.io" # the base hostname & protocol for your site
