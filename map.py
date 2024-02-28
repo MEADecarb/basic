@@ -22,17 +22,17 @@ def add_geojson_from_url(geojson_url, name, color, map_obj):
         style_function=style_function
     )
 
-    # Customize pop-ups based on the feature group name
+    # Customize pop-ups based on the feature group name and available data
     if name == "MD HB550 Overburdened Census Tracts":
-        # Example customization, adjust according to the available properties
-        geojson_layer.add_child(folium.GeoJsonPopup(fields=['PropertyName'], aliases=['Property:'], labels=True))
+        # Adjusted to use valid property names from the error message
+        geojson_layer.add_child(folium.GeoJsonPopup(fields=['GEOID20', 'NAME20'], aliases=['GEOID:', 'Name:'], labels=True))
     elif name == "Electric Retail Service Territories":
-        # Example customization, adjust according to the available properties
-        geojson_layer.add_child(folium.GeoJsonPopup(fields=['PropertyName'], aliases=['Property:'], labels=True))
+        # Adjust fields and aliases as needed
+        geojson_layer.add_child(folium.GeoJsonPopup(fields=['OBJECTID', 'STATEFP20'], aliases=['Object ID:', 'State FP:'], labels=True))
     elif name == "Justice40 Tracts May 2022":
-        # Example customization, adjust according to the available properties
-        geojson_layer.add_child(folium.GeoJsonPopup(fields=['PropertyName'], aliases=['Property:'], labels=True))
-    # Add more elif blocks for other specific customizations
+        # Adjust fields and aliases as needed, ensure to match actual data properties
+        geojson_layer.add_child(folium.GeoJsonPopup(fields=['COUNTYFP20', 'TRACTCE20'], aliases=['County FP:', 'Tract CE:'], labels=True))
+    # Add other elif blocks for specific layers with custom pop-ups
 
     geojson_layer.add_to(feature_group)
     feature_group.add_to(map_obj)
@@ -53,5 +53,5 @@ for i, (url, name) in enumerate(github_geojson_sources):
 # Add Layer Control to toggle feature groups
 folium.LayerControl().add_to(m)
 
-# Display the map
+
 m
